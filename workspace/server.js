@@ -5538,6 +5538,15 @@ if (!itsMe && !isOwner) return
 			}
 			reply(`${nomerny}${no_bio}${no_watsap}`)
 			break
+			
+case 'exif':
+case 'setexif':
+	        if (!men.key.fromMe) return
+	        if (args.length < 1) return reply(`_Penggunaan ${prefix}exif nama|author_`)
+		if (!q.split('|')) return reply(`Penggunaan ${prefix}exif nama|author`)
+		    exif.create(q.split('|')[0], q.split('|')[1])
+		    reply('_Success Set Exif!_')
+	        break
 
 //#>>>> Endinggg <<<<#\\
 default:
