@@ -2988,7 +2988,6 @@ detikawal = Date.now();
 					   fs.unlinkSync(medialx)
 						break
 
-/*
       case 'stiker':
 			case 'sticker':
       case 'stickergif':
@@ -3055,66 +3054,6 @@ fs.unlinkSync(media)
 					reply(`*Foto nya mana?*`)
 				}
 				break
-*/
-
-      case 'stiker':
-			case 'sticker':
-      case 'stickergif':
-      case 'stikergif':
-      case 'sgif':
-   		case 's':
-if ((isMedia && !god.message.videoMessage || isQuotedImage) && args.length == 0) {
-const encmediahy = isQuotedImage ? JSON.parse(JSON.stringify(god).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : god
-const mediahy = await master.downloadAndSaveMediaMessage(encmediahy)
-ran = '666.webp'
-await ffmpeg(`./${mediahy}`)
-.input(mediahy)
-.on('start', function (cmd) {
- console.log(`Started : ${cmd}`)
-})
-.on('error', function (err) {
- console.log(`Error : ${err}`)
-fs.unlinkSync(mediahy)
-reply('error')
-})
-.on('end', function () {
-console.log('Finish')
-master.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: god})
-fs.unlinkSync(ran)
-fs.unlinkSync(media)
-})
-.addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-.toFormat('webp')
-.save(ran)
-} else if ((isMedia && god.message.videoMessage.seconds < 99999 || isQuotedVideo && god.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 99999) && args.length == 0) {
-const encmediahy = isQuotedVideo ? JSON.parse(JSON.stringify(god).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : god
-const mediahy = await master.downloadAndSaveMediaMessage(encmediahy)
-ran = '999.webp'
-reply(mess.wait)
-await ffmpeg(`./${mediahy}`)
-.inputFormat(mediahy.split('.')[1])
-.on('start', function (cmd) {
-console.log(`Started : ${cmd}`)
-})
-.on('error', function (err) {
-console.log(`Error : ${err}`)
-fs.unlinkSync(mediahy)
-tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-reply(`Gagal, pada saat mengkonversi ${tipe} ke stiker`)
-})
-.on('end', function () {
-console.log('Finish')
-master.sendMessage(from, fs.readFileSync(ran), sticker, {quoted:god})
-fs.unlinkSync(ran)
-fs.unlinkSync(media)
-})
-.addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-.toFormat('webp')
-.save(ran)
-} else {
-reply(`Kirim gambar dengan caption ${prefix}sticker\nDurasi Sticker Video 1-9 Detik`)
-}
-break
 				
 case 'sticknobg': case 'snobg':
 		if(!itsMe && !isOwner) return
