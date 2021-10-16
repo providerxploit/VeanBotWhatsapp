@@ -3079,7 +3079,7 @@ reply('error')
 })
 .on('end', function () {
 console.log('Finish')
-master.sendMessage(from, fs.readFileSync(ran), sticker, {quoted:rep})
+master.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: god})
 fs.unlinkSync(ran)
 fs.unlinkSync(media)
 })
