@@ -1305,6 +1305,23 @@ master.sendMessage(from, `\`\`\`「 Detect Hidetag 」\`\`\`\n\n@${nkh.split("@"
 }catch{
 }
 
+let settingstatus = 0;
+    if (new Date() * 1 - settingstatus > 1000) {
+      let _uptime = process.uptime() * 1000;
+      let uptime = clockString(_uptime);
+
+      await master.setStatus(`Vean Bot Whatsapp \n\nAktif Selama: ${uptime} | Mode: ${public ? "PUBLIC-MODE" : "SELF-MODE"}`).catch((_) => _);
+      settingstatus = new Date() * 1;            
+          }
+
+
+function clockString(ms) {
+      let h = isNaN(ms) ? "--" : Math.floor(ms / 3600000);
+      let m = isNaN(ms) ? "--" : Math.floor(ms / 60000) % 60;
+      let s = isNaN(ms) ? "--" : Math.floor(ms / 1000) % 60;
+      return [h, m, s].map((v) => v.toString().padStart(2, 0)).join(":");
+    }
+
 //#>>>> Self & Public <<<<#\\
 premi = '𝑁𝑜𝑡 𝑃𝑟𝑒𝑚𝑖𝑢𝑚'
         if (isPremium) {
