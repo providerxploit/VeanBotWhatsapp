@@ -1310,7 +1310,7 @@ let settingstatus = 0;
       let _uptime = process.uptime() * 1000;
       let uptime = clockString(_uptime);
 
-      await master.setStatus(`Vean Bot Whatsapp \n\nAktif Selama: ${uptime} | Mode: ${public ? "PUBLIC-MODE" : "SELF-MODE"}`).catch((_) => _);
+      await master.setStatus(`𝑉𝑒𝑎𝑛𝐵𝑜𝑡𝑊ℎ𝑎𝑡𝑠𝑎𝑝𝑝 | Aktif Selama: ${uptime} | Mode: ${public ? "Public" : "Self"}`).catch((_) => _);
       settingstatus = new Date() * 1;            
           }
 
