@@ -27,6 +27,7 @@
     "cfonts": "^2.9.3",
     "cheerio": "^1.0.0-rc.10",
     "child_process": "^1.0.2",
+    "canvacord": "^5.2.3",
     "colors": "^1.4.0",
     "emoji-api": "^1.0.2",
     "encodeurl": "^1.0.2",
@@ -67,10 +68,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/veanyxz"
+    "url": "git+https://github.com/veanyxz/VeanBotWhatsapp"
   },
   "bugs": {
-    "url": "https://github.com/veanyxz/Botwa/issues"
+    "url": "https://github.com/veanyxz/VeanBotWhatsapp/issues"
   },
   "homepage": "https://github.com/veanyxz/veanyxz"
 }
