@@ -5569,6 +5569,7 @@ case 'setexif':
 	        
 case 'lirik':
 if (!q) return reply(`_Example : ${prefix+command} Menepi_`)
+reply(mess.wait)
 v = await getLirik(q)
 teks = `${shp} Judul : ${v.result.judul}\n${shp} Author : ${v.result.author}\n\n${shp} Lirik : \n${v.result.lirik}`
 v2 = await getBuffer(v.result.thumb)
