@@ -5571,12 +5571,12 @@ case 'lirik':
 if (!q) return reply(`_Example : ${prefix+command} Menepi_`)
 reply(mess.wait)
 lrkz = await getLirik(q)
-teks = `${shp} Judul : ${lrkz.result.judul}\n${shp} Author : ${lrkz.result.author}\n\n${shp} Lirik : \n${lrkz.result.lirik}`
+lerek = `${shp} Judul : ${lrkz.result.judul}\n${shp} Author : ${lrkz.result.author}\n\n${shp} Lirik : \n${lrkz.result.lirik}`
 lrkz2 = await getBuffer(lrkz.result.thumb)
-sendbutloc(lrkz2, monospace(teks), `Sama Sama`, `Thanks Kak~`)
+sendbutloc(lrkz2, monospace(lerek), `Sama Sama`, `Thanks Kak~`)
 break
 
-case 'ghrepo':
+case 'ghrepo': case 'githubrepo':
 if (!q) return reply('Masukin nama reponya')
 reply(mess.wait)
 p = await ghrepo(q)
@@ -5600,7 +5600,7 @@ txtz += `${shp} *Private :* ${i.isPrivate}\n`
 txtz += `${shp} *Created :* ${i.createdAt}\n`
 txtz += `${shp} *Update :* ${i.updateAt}\n\n`
 }
-sendMediaURL(from, p.items[0].author.avatar_url,txt)
+sendMediaURL(from, p.items[0].author.avatar_url,txtz)
 break
 
 case 'ghstalk': case 'githubstalk':
