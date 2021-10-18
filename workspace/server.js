@@ -5570,35 +5570,35 @@ case 'setexif':
 case 'lirik':
 if (!q) return reply(`_Example : ${prefix+command} Menepi_`)
 reply(mess.wait)
-v = await getLirik(q)
-teks = `${shp} Judul : ${v.result.judul}\n${shp} Author : ${v.result.author}\n\n${shp} Lirik : \n${v.result.lirik}`
-v2 = await getBuffer(v.result.thumb)
-sendbutloc(v2, monospace(teks), ``, `Thanks Kak~`)
+lrkz = await getLirik(q)
+teks = `${shp} Judul : ${lrkz.result.judul}\n${shp} Author : ${lrkz.result.author}\n\n${shp} Lirik : \n${lrkz.result.lirik}`
+lrkz2 = await getBuffer(lrkz.result.thumb)
+sendbutloc(lrkz2, monospace(teks), `Sama Sama`, `Thanks Kak~`)
 break
 
 case 'ghrepo':
 if (!q) return reply('Masukin nama reponya')
 reply(mess.wait)
 p = await ghrepo(q)
-txt = `*GITHUB REPO SEARCH*\n\n`
+txtz = `*GITHUB REPO SEARCH*\n\n`
 for (let i of p.items) {
-txt += `${shp} *Id :* ${i.id}\n`
-txt += `${shp} *Nodeid :* ${i.nodeId}\n`
-txt += `${shp} *Name Repo :* ${i.nameRepo}\n`
-txt += `${shp} *Url repo :* ${i.url_repo}\n`
-txt += `${shp} *Description :* ${i.description}\n`
-txt += `${shp} *Git url :* ${i.git_url}\n`
-txt += `${shp} *Ssh url :* ${i.ssh_url}\n`
-txt += `${shp} *Svn url :* ${i.svn_url}\n`
-txt += `${shp} *Homepage :* ${i.homepage}\n`
-txt += `${shp} *Stargazers :* ${i.stargazers}\n`
-txt += `${shp} *Watchers :* ${i.watchers}\n`
-txt += `${shp} *Forks :* ${i.forks}\n`
-txt += `${shp} *Branch :* ${i.defaultBranch}\n`
-txt += `${shp} *Language :* ${i.language}\n`
-txt += `${shp} *Private :* ${i.isPrivate}\n`
-txt += `${shp} *Created :* ${i.createdAt}\n`
-txt += `${shp} *Update :* ${i.updateAt}\n\n`
+txtz += `${shp} *Id :* ${i.id}\n`
+txtz += `${shp} *Nodeid :* ${i.nodeId}\n`
+txtz += `${shp} *Name Repo :* ${i.nameRepo}\n`
+txtz += `${shp} *Url repo :* ${i.url_repo}\n`
+txtz += `${shp} *Description :* ${i.description}\n`
+txtz += `${shp} *Git url :* ${i.git_url}\n`
+txtz += `${shp} *Ssh url :* ${i.ssh_url}\n`
+txtz += `${shp} *Svn url :* ${i.svn_url}\n`
+txtz += `${shp} *Homepage :* ${i.homepage}\n`
+txtz += `${shp} *Stargazers :* ${i.stargazers}\n`
+txtz += `${shp} *Watchers :* ${i.watchers}\n`
+txtz += `${shp} *Forks :* ${i.forks}\n`
+txtz += `${shp} *Branch :* ${i.defaultBranch}\n`
+txtz += `${shp} *Language :* ${i.language}\n`
+txtz += `${shp} *Private :* ${i.isPrivate}\n`
+txtz += `${shp} *Created :* ${i.createdAt}\n`
+txtz += `${shp} *Update :* ${i.updateAt}\n\n`
 }
 sendMediaURL(from, p.items[0].author.avatar_url,txt)
 break
