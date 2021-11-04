@@ -9,10 +9,7 @@ RUN apt-get install -y --no-install-recommends \
   sudo \
   tesseract-ocr \
   chromium \
-  imagemagick \
-  libwebp-dev \
-  webp \
-  webpmux
+  imagemagick
 RUN pip install pillow
 
 RUN npm install -g npm@latest
